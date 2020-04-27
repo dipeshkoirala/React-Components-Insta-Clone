@@ -4,12 +4,20 @@ import CommentInput from "./CommentInput";
 import Comment from "./Comment";
 import "./Comment.css";
 
-const CommentSection = props => {
-  // Add state for the comments
+import dummyData from "../../dummy-data";
 
+const CommentSection = () => {
+  // Add state for the comments
+  const dummy = useState(dummyData);
+  // console.log(props);
   return (
     <div>
-      {/* map through the comments data and return the Comment component */}
+      {
+        /* map through the comments data and return the Comment component */
+        dummy.map((item) => {
+          return <Comment Comment={item.comments} />;
+        })
+      }
       <CommentInput />
     </div>
   );
