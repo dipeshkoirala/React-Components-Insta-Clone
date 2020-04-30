@@ -4,20 +4,33 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart } from "@fortawesome/free-regular-svg-icons";
-//import Post from "./Post";
+
 //import Post from "./Post";
 const LikeSection = (props) => {
+  // const [like, setLike] = useState(false); //liked +1 (Boolean)=0 or 1
+  // const [dkLikes, setDkLike] = useState(likes);
+  // console.log(props.likes);
+  // const button = () => {
+  //   //change your state
+  //   setLike(!like);
+  //   if (like === true) {
+  //     setDkLike(dkLikes - 1);
+  //   } else {
+  //     setDkLike(dkLikes + 1);
+  //   }
+  // };
+  console.log(props);
   return (
     <div>
       <div className="like-section" key="likes-icons-container">
         <div className="like-section-wrapper">
-          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faHeart} onClick={props.clickHandle} />
         </div>
         <div className="like-section-wrapper">
           <FontAwesomeIcon icon={faComment} />
         </div>
       </div>
-      <p className="like-number">27 likes</p>
+      <p className="like-number">{props.likes} Likes</p>
     </div>
   );
 };
